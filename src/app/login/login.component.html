@@ -1,0 +1,19 @@
+<div class="login">
+  <br>
+  用户名：<input type="text" [(ngModel)]="name" >
+  <br>
+  密码：<input type="password" [(ngModel)]="pwd" >
+  <br>
+<input type="button" value="登录" (click)="login()">
+</div>
+
+<ul *ngIf="isShow" style="list-style-type:none">  
+  <h1>用户列表</h1>
+  <li *ngFor="let course of courses | async">
+    用户名： {{ course.username}}  <br>
+    邮箱： {{ course.email }} <br>
+    密码： {{ course.password}}  <br>
+    ID： {{ course.id }}  <br>
+    <hr>
+  </li>
+</ul>
